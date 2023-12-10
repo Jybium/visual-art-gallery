@@ -1,115 +1,315 @@
+// COMPONENTS AND IMPORTS
+
 import Image from "next/image";
+import Button from "./components/Button";
+import { Atomic_Age } from "next/font/google";
+import Link from "next/link";
+import { ArtWorks, Painting, PopularPiece, PricesRange } from "@/constants/data";
+import ArtWork from "./components/ArtWork";
+import ArtCard from "./components/ArtCard";
+import { MdKeyboardArrowRight, MdOutlineArrowForward  } from "react-icons/md";
+import Accordion from "./components/Accordion";
+
+
+// IMAGES
+import firstPaint from "../../public/abstraction.png";
+import secondPaint from "../../public/landscape.png";
+import thirdPaint from "../../public/streetart.png";
+import fourthPaint from "../../public/portrait.png";
+import fifthPaint from "../../public/popculture.png";
+import sixthPaint from "../../public/horror.png";
+import PriceRange from "../../public/landing-page-our-company-2.png";
+import Commitment from "../../public/landing-page-Committment.png";
+import Newletter from "../../public/landing-page-newletter2.png"
+import { GrMail } from "react-icons/gr";
+
+
+const Atomic = Atomic_Age({ subsets: ["latin"], weight: "400" });
+
 
 export default function Home() {
+
+  
+  const styles = `text-white font-bold text-2xl +  ${Atomic.className}`;
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              objectFit="cover"
-              objectPosition="center"
-              priority
-            />
-          </a>
+    <main className="flex min-h-screen flex-col justify-between w-full">
+      {/* BANNER */}
+      <section className="bg-banner h-[70vh] bg-blend-overlay  bg-center bg-cover w-full grid items-center">
+        <div className="w-1/2 pl-14 grid gap-6 h-[40vh] justify-center tracking-wide place-content-center">
+          <h1 className={styles}>
+            Welcome to DecoArt Exchange where art comes to life.
+          </h1>
+          <div className="text-xs grid gap-3 text-white">
+            <p>
+              <span>Unique Artworks by professional artists</span>
+            </p>
+            <p>
+              <span>International artists delivered to your home</span>
+            </p>
+            <p>
+              <span>Our team of Art advisors available 24/7 to help you</span>
+            </p>
+          </div>
+          <Button
+            title="Explore Our Category"
+            classname="bg-blue-600 text-white text-[10px] tracking-normal rounded w-1/3"
+          />
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+      {/* TRENDING ARTWORK */}
+      <section className="w-11/12 m-auto py-10">
+        <div className="font-bold flex justify-between">
+          <p className="text-lg">Trending Artworks</p>
+          <p className="text-sm">See All Trends</p>
+        </div>
+        <div className="grid grid-flow-col gap-12 py-10">
+          {ArtWorks.map((data) => (
+            <ArtWork artwork={data} />
+          ))}
+        </div>
+      </section>
+
+      {/* NEWEST ARTWORK */}
+      <section className=" py-10 bg-[#F2F2F2C9]">
+        <div className="w-11/12 m-auto">
+          <div className="font-bold flex justify-between">
+            <p className="text-lg">New Artworks</p>
+            <p className="text-sm">See All New Artworks</p>
+          </div>
+          <div className="grid grid-flow-col gap-12 py-10">
+            {ArtWorks.map((data) => (
+              <ArtWork artwork={data} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SHOP BY ART STYLE */}
+      <section className="py-10 bg-[#F2f2f2c9] my-20">
+        <div className="w-11/12 mx-auto">
+          <div className="font-bold flex justify-between">
+            <p className="text-lg">Shop By Art Style</p>
+            <p className="text-sm">All Our Painting</p>
+          </div>
+
+          <div className="my-8">
+            <div className="flex justify-between gap-5">
+              {/* FIRST COLUMN */}
+              <div className="relative">
+                <Image
+                  src={firstPaint}
+                  objectFit="cover"
+                  objectPosition="center"
+                  alt={`A sample picture of Abstarction`}
+                  className="relative "
+                />
+                <p className="absolute left-3 bottom-3 text-white tracking-wider text-xs">
+                  Abstraction
+                </p>
+              </div>
+              {/* SECOND COLUMN */}
+              <div className="relative">
+                <Image
+                  src={secondPaint}
+                  objectFit="cover"
+                  objectPosition="center"
+                  alt={`A sample picture of landscape`}
+                  className="relative "
+                />
+                <p className="absolute left-3 bottom-3 text-white tracking-wider text-xs">
+                  Landscape
+                </p>
+              </div>
+              {/* THIRD COLUMN */}
+              <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+                <div className="relative">
+                  <Image
+                    src={thirdPaint}
+                    objectFit="cover"
+                    objectPosition="center"
+                    alt={`A sample picture of Street art`}
+                    className="relative "
+                  />
+                  <p className="absolute left-3 bottom-3 text-white tracking-wider text-xs">
+                    Street Art
+                  </p>
+                </div>
+                <div className="relative">
+                  <Image
+                    src={fourthPaint}
+                    objectFit="cover"
+                    objectPosition="center"
+                    alt={`A sample picture of portrait`}
+                    className="relative "
+                  />
+                  <p className="absolute left-3 bottom-3 text-white tracking-wider text-xs">
+                    Portrait
+                  </p>
+                </div>
+                <div className="relative">
+                  <Image
+                    src={fifthPaint}
+                    objectFit="cover"
+                    objectPosition="center"
+                    alt={`A sample picture of horror`}
+                    className="relative "
+                  />
+                  <p className="absolute left-3 bottom-3 text-white tracking-wider text-xs">
+                    Horror
+                  </p>
+                </div>
+                <div className="relative">
+                  <Image
+                    src={sixthPaint}
+                    objectFit="cover"
+                    objectPosition="center"
+                    alt={`A sample picture of pop culture`}
+                    className="relative "
+                  />
+                  <p className="absolute left-3 bottom-3 text-white tracking-wider text-xs">
+                    Pop Culture
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OUR COLLECTION */}
+      <section className="w-11/12 m-auto py-10">
+        <div className="grid gap-3 tracking-wide">
+          <h1 className="font-bold text-xl">
+            Which new artwork would you love to get?
+          </h1>
+          <p className="text-xs">
+            Discover selections of artwork inspired by feelings.
+          </p>
+          <p className="font-bold flex gap-4 items-center">
+            All our collections{" "}
+            <span>
+              <MdOutlineArrowForward size={20} />
+            </span>
+          </p>
+        </div>
+        <div className="flex gap-12 items-center">
+          {PopularPiece.map((data) => (
+            <ArtCard data={data} />
+          ))}
+        </div>
+      </section>
+
+      {/* ARTWORK PRICE RANGE */}
+      <section className="bg-[#f2f2f2c9] py-10">
+        <div className="w-11/12 m-auto flex justify-between items-center">
+          <div className="w-[40%]">
+            <h1>Artwork Price Range</h1>
+            <div className="grid  gap-3 text-white mt-7 ">
+              {PricesRange.map((data) => (
+                <div className="flex justify-between items-center bg-blue-500 p-2 px-5 rounded">
+                  <div className="grid gap-1">
+                    <p className="text-xs tracking-wider font-thin">
+                      {data.name}
+                    </p>
+                    <p className="font-bold text-sm">{data.price}</p>
+                  </div>
+                  <MdKeyboardArrowRight size={25} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <Image
+            src={PriceRange}
+            alt=""
+            objectFit="cover"
+            objectPosition="center"
+            className="w-[42%] h-[16rem]"
+          />
+        </div>
+      </section>
+
+      {/* OUR COMMITMENT */}
+      <section className="flex w-11/12 m-auto py-10 items-center justify-between">
+        <div className="grid gap-6 tracking-wide w-[52%]">
+          <h1 className="font-bold text-xl">Our commitment to you</h1>
+          <p
+            className="text-[11px] tracking-wider"
+            style={{ lineHeight: "20px" }}
+          >
+            Are you in search of the perfect piece of art that fulfills all your
+            criteria and captures your heart? Our dedicated personal advisors
+            are ready for open discussions about your taste and preferences,
+            guiding you to discover the ideal artwork. With our generous 1-year
+            return policy, you have ample time to decide if your chosen piece
+            truly resonates with you. Additionally, each artwork undergoes
+            thorough originality verification by our team, and you'll receive a
+            signed certificate of authenticity for your assurance. How can we
+            assist you in finding your ideal artwork?
+          </p>
+          <Button
+            title="LEARN MORE ABOUT US"
+            classname="bg-blue-600 text-white text-[9px] tracking-normal rounded w-[40%] "
+          />
+        </div>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={Commitment}
+          alt=""
+          objectFit="cover"
+          objectPosition="center"
+          className="w-[45%] h-[17rem]"
         />
-      </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* FAQ */}
+      <section className="py-10 bg-[#F2f2f2c9] my-20">
+        <div className="w-11/12 mx-auto">
+          <div className="font-bold flex justify-between">
+            <p className="text-lg">How to buy art on DecoArt Exchange?</p>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div>
+            <Accordion />
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
+      {/* NEWSLETTER */}
+      <section className=" w-11/12 h-60 justify-between px-10 m-auto bg-[#F2f2f2c9] my-20 flex ">
+        <div className="flex flex-col justify-center gap-3 bg-white rounded h-2/3 my-auto p-4">
+          <h1 className="font-bold text-xl">Let us inspire you</h1>
+          <p className="text-sm">
+            Want to receive exciting art and lifestyle content, directly to your
+            inbox?
           </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <div className="flex gap-1">
+            <div className="relative">
+              <GrMail className="absolute bottom-[30%] left-3" size={13} />
+              <input
+                type="email"
+                name="subscribe"
+                placeholder="Email Address"
+                id="subscribe"
+                className="text-sm border-[1px] py-2 px-4 pl-10 border-black placeholder:text-xs placeholder:text-black"
+              />
+            </div>
+            <Button
+              title="subscribe"
+              classname="bg-black text-white text-[10px] tracking-normal rounded w-1/6 justify-center flex items-center h-auto px-2"
+            />
+          </div>
+        </div>
+        <Image
+          src={Newletter}
+          alt=""
+          objectFit="contain"
+          objectPosition="center"
+          className="w-auto mx-auto "
+        />
+      </section>
+
+    
     </main>
   );
 }

@@ -7,7 +7,7 @@ const ImageCard = ({ source, text, alt, width, height, classname }) => {
   const [style, setstyle] = useState("");
 
   const Click = () => {
-    setstyle("bg-blend-overlay bg-slate-400 blur-sm");
+    setstyle("bg-blend-overlay  blur-sm");
   };
 
   console.log(style);
