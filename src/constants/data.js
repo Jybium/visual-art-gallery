@@ -36,6 +36,21 @@ import thirdPiece from "../../public/landing-page-popular-piece3.png";
 import fourthPiece from "../../public/landing-page-popular-piece4.png";
 import fifthPiece from "../../public/landing-page-popular-piece5.png";
 
+// Partner
+import firstPartner from "../../public/visa.png"
+import secondPartner from "../../public/mastercard.png"
+import thirdPartner from "../../public/americaexpress.png"
+import fourthPartner from "../../public/paypal.png"
+import fifthPartner from "../../public/affirm.png"
+import sixthPartner from "../../public/airpay.png"
+import sevenPartner from "../../public/sofort.png"
+import eightPartner from "../../public/bitcoin.png"
+
+
+// Follow
+import firstFollow from "../../public/facebook.png"
+import secondFollow from "../../public/instagram.png"
+import thirdFollow from "../../public/pinterest.png"
 
 
 export const authPage = [
@@ -146,4 +161,23 @@ export const footer = [
   {id: "2", heading:"Customer Service", child:["Contact Us", "Customers Testimonial", "My Account", "FAQ"]},
   {id: "3", heading:"Art Services", child:["Free Art Advisory", "Commission An Artist", "Trade"]},
   {id: "4", heading:"For Creator", child:["Log In As a Creator", "Join nexus as an artist", "Join nexus as a buyer"]},
-]
+];
+
+export const follow = [
+  {id:"1", image: firstFollow},
+  {id:"2", image: secondFollow},
+  {id:"3", image: thirdFollow},
+];
+
+export const partner = [
+
+  {id:"1", image: firstPartner},
+  {id:"2", image: secondPartner},
+  {id:"3", image: thirdPartner},
+  {id:"4", image: fourthPartner},
+  {id:"5", image: fifthPartner},
+  {id:"6", image: sixthPartner},
+  {id:"7", image: sevenPartner},
+  {id:"8", image: eightPartner}
+
+];

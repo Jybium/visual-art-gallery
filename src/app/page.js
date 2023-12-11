@@ -9,6 +9,8 @@ import ArtWork from "./components/ArtWork";
 import ArtCard from "./components/ArtCard";
 import { MdKeyboardArrowRight, MdOutlineArrowForward  } from "react-icons/md";
 import Accordion from "./components/Accordion";
+import Banner from "./components/Banner";
+import { GrMail } from "react-icons/gr";
 
 
 // IMAGES
@@ -21,7 +23,9 @@ import sixthPaint from "../../public/horror.png";
 import PriceRange from "../../public/landing-page-our-company-2.png";
 import Commitment from "../../public/landing-page-Committment.png";
 import Newletter from "../../public/landing-page-newletter2.png"
-import { GrMail } from "react-icons/gr";
+import globe from "../../public/globe.png"
+import question from "../../public/question.png"
+import unique from "../../public/unique.png"
 
 
 const Atomic = Atomic_Age({ subsets: ["latin"], weight: "400" });
@@ -29,24 +33,42 @@ const Atomic = Atomic_Age({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
 
-  
   const styles = `text-white font-bold text-2xl +  ${Atomic.className}`;
+
   return (
     <main className="flex min-h-screen flex-col justify-between w-full">
       {/* BANNER */}
-      <section className="bg-banner h-[70vh] bg-blend-overlay  bg-center bg-cover w-full grid items-center">
+      <Banner className="bg-banner">
         <div className="w-1/2 pl-14 grid gap-6 h-[40vh] justify-center tracking-wide place-content-center">
-          <h1 className={styles}>
+          <h1 className={styles} style={Atomic.style}>
             Welcome to DecoArt Exchange where art comes to life.
           </h1>
           <div className="text-xs grid gap-3 text-white">
-            <p>
+            <p className="flex items-center gap-4">
+              <Image
+                src={unique}
+                objectFit="cover"
+                objectPosition="center"
+                alt="unique icon"
+              />
               <span>Unique Artworks by professional artists</span>
             </p>
-            <p>
+            <p className="flex items-center gap-4">
+              <Image
+                src={globe}
+                objectFit="cover"
+                objectPosition="center"
+                alt="unique icon"
+              />
               <span>International artists delivered to your home</span>
             </p>
-            <p>
+            <p className="flex items-center gap-4">
+              <Image
+                src={question}
+                objectFit="cover"
+                objectPosition="center"
+                alt="unique icon"
+              />
               <span>Our team of Art advisors available 24/7 to help you</span>
             </p>
           </div>
@@ -55,7 +77,7 @@ export default function Home() {
             classname="bg-blue-600 text-white text-[10px] tracking-normal rounded w-1/3"
           />
         </div>
-      </section>
+      </Banner>
 
       {/* TRENDING ARTWORK */}
       <section className="w-11/12 m-auto py-10">
@@ -308,8 +330,6 @@ export default function Home() {
           className="w-auto mx-auto "
         />
       </section>
-
-    
     </main>
   );
 }
