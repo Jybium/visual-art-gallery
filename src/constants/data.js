@@ -181,3 +181,12 @@ export const partner = [
   {id:"8", image: eightPartner}
 
 ];
+
+export const filter = [
+  {id:'1', link:"All"},
+  {id:'2', link:"Trending"},
+  {id:'3', link:"New"},
+  {id:'4', link:"Your artists"},
+]
+
+// export const 

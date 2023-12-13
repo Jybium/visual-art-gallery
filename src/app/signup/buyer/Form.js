@@ -78,8 +78,14 @@ const Form = () => {
         <Button
           classname="bg-blue-400 w-full text-[#fff] rounded-full mt-8"
           title="Continue"
-          // onclick={}
+          // onclick={null}
         />
+        {/* <button
+          type="submit"
+          classname="bg-blue-400 w-full text-[#fff] rounded-full mt-8"
+        >
+          Continue
+        </button> */}
       </form>
       <Checkbox
         register={register}

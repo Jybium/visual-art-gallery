@@ -58,7 +58,7 @@ export default function Home() {
                 src={globe}
                 objectFit="cover"
                 objectPosition="center"
-                alt="unique icon"
+                alt="globe icon"
               />
               <span>International artists delivered to your home</span>
             </p>
@@ -67,7 +67,7 @@ export default function Home() {
                 src={question}
                 objectFit="cover"
                 objectPosition="center"
-                alt="unique icon"
+                alt="artist question icon"
               />
               <span>Our team of Art advisors available 24/7 to help you</span>
             </p>
