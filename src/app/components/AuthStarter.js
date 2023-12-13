@@ -1,5 +1,6 @@
 import React from "react";
 import AuthWrapper from "./AuthWrapper";
+import Link from "next/link";
 import ImageCard from "./ImageCard";
 import Buyer from "../../../public/buyer.png";
 import Artist from "../../../public/artist.png";
@@ -16,22 +17,26 @@ const AuthStarter = () => {
         </p>
       </div>
       <section className="grid sm:flex justify-center gap-40 my-7 mt-20">
-        <ImageCard
-          source={Buyer}
-          width={180}
-          height={180}
-          text="Buyer"
-          classname="p-4"
-          alt="man sitting with laptop and working"
-        />
-        <ImageCard
-          source={Artist}
-          width={180}
-          height={180}
-          classname="p-4"
-          text="Artist"
-          alt="man turned around while working at the computer"
-        />
+        <Link href="/signup/buyer">
+          <ImageCard
+            source={Buyer}
+            width={180}
+            height={180}
+            text="Buyer"
+            classname="p-4"
+            alt="man sitting with laptop and working"
+          />
+        </Link>
+        <Link href="/signup/artist?stage=1">
+          <ImageCard
+            source={Artist}
+            width={180}
+            height={180}
+            classname="p-4"
+            text="Artist"
+            alt="man turned around while working at the computer"
+          />
+        </Link>
       </section>
     </>
   );
