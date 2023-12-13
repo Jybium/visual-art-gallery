@@ -10,7 +10,7 @@ const ImageCard = ({ source, text, alt, width, height, classname }) => {
     setstyle("bg-blend-overlay  blur-sm");
   };
 
-  console.log(style);
+  
   const classes = `shadow rounded-md m-auto + ${classname} + ${style}`;
   const styles = ` text-center `;
 

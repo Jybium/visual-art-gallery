@@ -80,7 +80,7 @@ export const Genre = [
 
 export const NavBar = [
   {id:"1", link:"Artplace", to:"/artplace"},
-  {id:"2", link:"Inspire me", to:"/inspiration"},
+  {id:"2", link:"Inspire me", to:"/inspire-me"},
   // {id:"3", link:"Trade", to:"/trade"},
 ]
 
@@ -181,3 +181,12 @@ export const partner = [
   {id:"8", image: eightPartner}
 
 ];
+
+export const filter = [
+  {id:'1', link:"All"},
+  {id:'2', link:"Trending"},
+  {id:'3', link:"New"},
+  {id:'4', link:"Your artists"},
+]
+
+// export const 

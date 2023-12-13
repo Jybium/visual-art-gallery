@@ -22,6 +22,7 @@ const Footer = () => {
                   objectFit="contain"
                   objectPosition="center"
                   className="w-10 h-10 p-2 rounded-full bg-black"
+                  alt='Social icons'
                 />
               ))}
             </div>
@@ -58,6 +59,7 @@ const Footer = () => {
               src={data.image}
               key={data.id}
               objectFit="contain"
+              alt='our partner icon'
               objectPosition="center"
               // className="block w-auto"
               />

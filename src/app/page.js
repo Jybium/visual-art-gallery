@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-between w-full">
       {/* BANNER */}
-      <Banner className="bg-banner">
+      <Banner className="bg-banner ">
         <div className="w-1/2 pl-14 grid gap-6 h-[40vh] justify-center tracking-wide place-content-center">
           <h1 className={styles} style={Atomic.style}>
             Welcome to DecoArt Exchange where art comes to life.
@@ -58,7 +58,7 @@ export default function Home() {
                 src={globe}
                 objectFit="cover"
                 objectPosition="center"
-                alt="unique icon"
+                alt="globe icon"
               />
               <span>International artists delivered to your home</span>
             </p>
@@ -67,7 +67,7 @@ export default function Home() {
                 src={question}
                 objectFit="cover"
                 objectPosition="center"
-                alt="unique icon"
+                alt="artist question icon"
               />
               <span>Our team of Art advisors available 24/7 to help you</span>
             </p>
