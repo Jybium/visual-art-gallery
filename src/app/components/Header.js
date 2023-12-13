@@ -21,12 +21,14 @@ import { GrCart, GrSearch, GrLike, GrFavorite } from 'react-icons/gr'
            className="text-sm border-[1px] rounded py-1 px-4 pl-10 border-black placeholder:text-xs placeholder:text-black"
          />
        </div>
+       <Link href="/upload">
        <button
          type="button"
          className="rounded text-xs py-2 px-6 border-[1px] border-[#285FF4]"
-       >
+         >
          Upload 
        </button>
+        </Link>
        <div className="flex justify-between items-center gap-9">
          <div className="relative">
            {/* <GrLike /> */}
