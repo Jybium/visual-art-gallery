@@ -22,12 +22,12 @@ import fourthArt from "../../public/landing-page-item4.png"
 import fifthArt from "../../public/landing-page-item5.png"
 
 // Our Paint
-import firstPaint from "../../public/abstraction.png";
-import secondPaint from "../../public/landscape.png";
-import thirdPaint from "../../public/streetart.png";
-import fourthPaint from "../../public/portrait.png";
-import fifthPaint from "../../public/popculture.png";
-import sixthPaint from "../../public/horror.png";
+import firstPaint from "../../public/Abstraction.png";
+import secondPaint from "../../public/Landscape.png";
+import thirdPaint from "../../public/StreetArt.png";
+import fourthPaint from "../../public/Portrait.png";
+import fifthPaint from "../../public/PopCulture.png";
+import sixthPaint from "../../public/Horror.png";
 
 // Popular Piece
 import firstPiece from "../../public/landing-page-popular-piece1.png";
