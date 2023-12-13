@@ -1,0 +1,13 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[12].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\components\\AuthWrapper.js","import":"Atomic_Age","arguments":[{"subsets":["latin"],"weight":"400"}],"variableName":"Atomic"} ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: '__Atomic_Age_Fallback_cbe754';
+  src: local("Arial");
+  ascent-override:85.78%;
+  descent-override:26.91%;
+  line-gap-override:0.00%;
+  size-adjust:119.03%;
+}@font-face {font-family: '__Atomic_Age_Fallback_Fallback_cbe754';src: local("Arial");ascent-override: 85.78%;descent-override: 26.91%;line-gap-override: 0.00%;size-adjust: 119.03%
+}.__className_cbe754 {font-family: '__Atomic_Age_Fallback_cbe754', '__Atomic_Age_Fallback_Fallback_cbe754';font-weight: 400;font-style: normal
+}
