@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-between w-full">
       {/* BANNER */}
-      <Banner className="bg-banner">
+      <Banner className="bg-banner ">
         <div className="w-1/2 pl-14 grid gap-6 h-[40vh] justify-center tracking-wide place-content-center">
           <h1 className={styles} style={Atomic.style}>
             Welcome to DecoArt Exchange where art comes to life.

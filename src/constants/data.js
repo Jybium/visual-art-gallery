@@ -80,7 +80,7 @@ export const Genre = [
 
 export const NavBar = [
   {id:"1", link:"Artplace", to:"/artplace"},
-  {id:"2", link:"Inspire me", to:"/inspiration"},
+  {id:"2", link:"Inspire me", to:"/inspire-me"},
   // {id:"3", link:"Trade", to:"/trade"},
 ]
 

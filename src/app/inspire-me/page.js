@@ -21,7 +21,7 @@ const page = () => {
     <main>
         {/* BANNER */}
 
-      <Banner className="bg-inspire text-center" style={Atomic.style}>
+      <Banner className="bg-inspire text-center items-center" style={Atomic.style}>
         <h1 className="text-2xl text-white font-semibold">
           Discover the beauty of art.
         </h1>
